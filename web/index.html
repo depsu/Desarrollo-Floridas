@@ -50,7 +50,21 @@
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>
+        <a class="navbar-brand logo-image" href="index.html">
+
+            <picture>
+                <!-- Esta imagen se mostrará en dispositivos móviles -->
+                <source srcset="images/logo-mobile.svg" media="(max-width: 767px)">
+                <!-- Esta imagen se mostrará en dispositivos de escritorio -->
+                <source srcset="images/logo.svg" media="(min-width: 768px)">
+                <!-- Imagen predeterminada (por si el navegador no soporta <picture> o <source>) -->
+                <img src="images/logo.svg" alt="alternative">
+              </picture>
+
+        </a>
+
+
+        
         
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -524,6 +538,11 @@
         </div> <!-- end of container -->
     </div> <!-- end of form-2 -->
     <!-- end of contact -->
+
+
+        <!--Botón whatsapp-->
+        <a href="https://api.whatsapp.com/send?phone=56930153632&text=Cu%C3%A9ntanos%20en%20que%20podemos%20ayudar%20%F0%9F%98%80%F0%9F%91%8D" class="whatsapp" target="_blank"> <i
+            class="fab fa-whatsapp whatsapp-icon"></i></a>
 
 
     <!-- Footer -->
