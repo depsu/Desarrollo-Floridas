@@ -8,18 +8,7 @@
 (function($) {
     "use strict"; 
 	
-	/* Preloader */
-	$(window).on('load', function() {
-		var preloaderFadeOutTime = 500;
-		function hidePreloader() {
-			var preloader = $('.spinner-wrapper');
-			setTimeout(function() {
-				preloader.fadeOut(preloaderFadeOutTime);
-			}, 500);
-		}
-		hidePreloader();
-	});
-
+	 
 	
 	/* Navbar Scripts */
 	// jQuery to collapse the navbar on scroll
@@ -161,7 +150,7 @@
     	if (event.isDefaultPrevented()) {
             // handle the invalid form...
             rformError();
-            rsubmitMSG(false, "Please fill all fields!");
+            rsubmitMSG(false, "Por favor llene toda la información");
         } else {
             // everything looks good!
             event.preventDefault();
@@ -175,12 +164,11 @@
 		var email = $("#remail").val();
 		var phone = $("#rphone").val();
         var select = $("#rselect").val();
-        var terms = $("#rterms").val();
         
         $.ajax({
             type: "POST",
             url: "php/requestform-process.php",
-            data: "name=" + name + "&email=" + email + "&phone=" + phone + "&select=" + select + "&terms=" + terms, 
+            data: "name=" + name + "&email=" + email + "&phone=" + phone + "&select=" + select, 
             success: function(text) {
                 if (text == "success") {
                     rformSuccess();
@@ -219,7 +207,7 @@
     	if (event.isDefaultPrevented()) {
             // handle the invalid form...
             cformError();
-            csubmitMSG(false, "Please fill all fields!");
+            csubmitMSG(false, "Por favor llene toda la información");
         } else {
             // everything looks good!
             event.preventDefault();
@@ -232,11 +220,11 @@
 		var name = $("#cname").val();
 		var email = $("#cemail").val();
         var message = $("#cmessage").val();
-        var terms = $("#cterms").val();
+ 
         $.ajax({
             type: "POST",
             url: "php/contactform-process.php",
-            data: "name=" + name + "&email=" + email + "&message=" + message + "&terms=" + terms, 
+            data: "name=" + name + "&email=" + email + "&message=" + message, 
             success: function(text) {
                 if (text == "success") {
                     cformSuccess();
@@ -250,7 +238,7 @@
 
     function cformSuccess() {
         $("#contactForm")[0].reset();
-        csubmitMSG(true, "Message Submitted!");
+        csubmitMSG(true, "Mensaje enviado correctamente");
         $("input").removeClass('notEmpty'); // resets the field label after submission
         $("textarea").removeClass('notEmpty'); // resets the field label after submission
     }

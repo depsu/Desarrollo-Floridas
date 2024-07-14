@@ -2,31 +2,26 @@
 $errorMSG = "";
 
 if (empty($_POST["name"])) {
-    $errorMSG = "Name is required ";
+    $errorMSG = "Se requiere agregar un nombre";
 } else {
     $name = $_POST["name"];
 }
 
 if (empty($_POST["email"])) {
-    $errorMSG = "Email is required ";
+    $errorMSG = "Se requiere agregar un correo";
 } else {
     $email = $_POST["email"];
 }
 
 if (empty($_POST["message"])) {
-    $errorMSG = "Message is required ";
+    $errorMSG = "Se requiere agregar un mensaje";
 } else {
     $message = $_POST["message"];
 }
 
-if (empty($_POST["terms"])) {
-    $errorMSG = "Terms is required ";
-} else {
-    $terms = $_POST["terms"];
-}
 
-$EmailTo = "yourname@domain.com";
-$Subject = "New message from Evolo landing page";
+$EmailTo = "contacto@desarrollosflorida.cl";
+$Subject = "Nuevo mensaje del formulario de contacto de landing page";
 
 // prepare email body text
 $Body = "";
@@ -38,9 +33,6 @@ $Body .= $email;
 $Body .= "\n";
 $Body .= "Message: ";
 $Body .= $message;
-$Body .= "\n";
-$Body .= "Terms: ";
-$Body .= $terms;
 $Body .= "\n";
 
 // send email
